@@ -6,7 +6,9 @@ BLUE = '\033[34m'
 MAGENTA = '\033[35m'
 CYAN = '\033[36m'
 WHITE = '\033[37m'
+RED = '\033[31m'
 RESET = '\033[39m'
+
 
 import time #
 
@@ -18,7 +20,7 @@ intentos = 0
 
 nombre = input("Antes de seguir necesito que coloques su nombre: ")
 
-print(CYAN+"\nHola", nombre,"espero que estes preparado para responder 5 preguntas de Biologia, presione Enter para enviar cada alternativa SIEMPRE en minusculas."+RESET)
+print(CYAN+"\nHola", nombre,"espero que estes preparado para responder 5 preguntas de Biologia, presione Enter para enviar cada alternativa."+RESET)
 
 
 input("\nPresione Enter para iniciar: ")
@@ -43,7 +45,7 @@ while iniciar_trivia == True:
   input("\nPresione Enter para continuar: ")
   print("Cargando...")
   time.sleep(1)   #Recordar que las funciones deben estar Dentro del While, osea 1 Tab a la derecha
-  print(GREEN+"\nEste es tu intento numero"+RESET, intentos)
+  print(GREEN+"Este es tu intento numero"+RESET, intentos)
   print(CYAN+"Empezaras con un puntaje aleatorio de"+RESET, puntaje, CYAN+"puntos, ¿podras conseguir 1000 puntos?"+RESET)
   input("\nPresione Enter para continuar: ")
   print("Cargando...")
@@ -59,10 +61,10 @@ while iniciar_trivia == True:
   print("d)Neutralizar la acidez del contenido gástrico.")
   print("e)Ser una sustancia que inhibe a las bacterias."+RESET)
 
-  respuesta_1 = input("Tu respuesta: ")
+  respuesta_1 = input("Tu respuesta: ").lower()
   
   while respuesta_1 not in ("a","b","c","d","e","x"):
-   respuesta_1 = input(MAGENTA+"Esa clave no existe, por favor ingrese alguna nuevamente: "+RESET)
+   respuesta_1 = input(RED+"Esa clave no existe, por favor ingrese alguna nuevamente: "+RESET).lower()
   
   if respuesta_1 == "a":
      puntaje -= random.randint(10, 30)
@@ -101,10 +103,10 @@ while iniciar_trivia == True:
   print("d)Glándulas pilóricas.")
   print("e)Glándulas de Brúnner"+RESET)
   
-  respuesta_2 = input("Tu respuesta: ")
+  respuesta_2 = input("Tu respuesta: ").lower()
   
   while respuesta_2 not in ("a","b","c","d","e","x"):
-   respuesta_2 = input(MAGENTA+"Esa clave no existe, por favor ingrese alguna nuevamente: "+RESET)
+   respuesta_2 = input(RED+"Esa clave no existe, por favor ingrese alguna nuevamente: "+RESET).lower()
   
   if respuesta_2 == "a":
     puntaje -= 10
@@ -140,9 +142,10 @@ while iniciar_trivia == True:
   print("d)Principales") 
   print("e)Argentafines"+RESET)#Siempre el print dejando un espacio aqui
   
-  respuesta_3 = input("Tu respuesta: ")
+  respuesta_3 = input("Tu respuesta: ").lower()
+  
   while respuesta_3 not in ("a", "b", "c", "d", "e", "x"):
-    respuesta_3 = input(MAGENTA+"Marque una alternativa que este entre las monstradas: "+RESET)
+    respuesta_3 = input(RED+"Esa clave no existe, por favor ingrese alguna nuevamente: "+RESET).lower()
   
   if respuesta_3 == "a":
     print(MAGENTA+"Incorrecto!!", nombre,"\nLas celulas mucosas son tambien llamadas celulas mucigenas.Estan en las Glandulas Fundicas.\nPierdes 5 puntos"+RESET)
@@ -186,10 +189,10 @@ while iniciar_trivia == True:
   print("d)Traquea")
   print("e)Bronquios"+RESET)
 
-  respuesta_4 = input("Tu respuesta: ")
+  respuesta_4 = input("Tu respuesta: ").lower()
   
   while respuesta_4 not in ("a","b","c","d","e", "x"):
-   respuesta_4 = input(MAGENTA+"Esa clave no existe, por favor ingrese alguna nuevamente: "+RESET)
+   respuesta_4 = input(RED+"Esa clave no existe, por favor ingrese alguna nuevamente: "+RESET).lower()
   
   if respuesta_4 == "a":
      puntaje -= random.randint(40, 70)
@@ -226,9 +229,9 @@ while iniciar_trivia == True:
   print("d)Sacos alveolares") 
   print("e)Arteria bronquial"+RESET)#Siempre el print dejando un espacio aqui
   
-  respuesta_5 = input("Tu respuesta: ")
+  respuesta_5 = input("Tu respuesta: ").lower()
   while respuesta_5 not in ("a", "b", "c", "d", "e", "x"):
-    respuesta_5 = input(MAGENTA+"Marque una alternativa que este entre las monstradas: "+RESET)
+    respuesta_5 = input(RED+"Esa clave no existe, por favor ingrese alguna nuevamente: "+RESET).lower()
   
   if respuesta_5 == "a":
     print(MAGENTA+"Incorrecto!!\nLa vena pulmonar lleva sangre con oxígeno de los pulmones al corazón.\nPierdes 50 puntos"+RESET)
@@ -296,36 +299,5 @@ puntaje,"puntos."+RESET)
   
   if repetir_trivia != "si": #!= significa desigual
    print(GREEN+"\nGracias por jugar la Trivia", nombre, "tenga un buen dia."+RESET)#No me funciona con el nombre al final
-   iniciar_trivia = False #MUY IMPORTANTE para que al presionar cualquier letra no vuelva a repetir las preguntas de Biologia 
+   iniciar_trivia = False #MUY IMPORTANTE para que al presionar cualquier letra no vuelva a repetir las preguntas de Biologia
                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-  
-
-  
-
-  
-
-
-
-
