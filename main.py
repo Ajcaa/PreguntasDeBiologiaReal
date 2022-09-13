@@ -39,13 +39,12 @@ if numero == 0:
 while iniciar_trivia == True:
   intentos += 1 #
   puntaje = random.randint(0, 50) 
-  #print(GREEN+"Este es tu intento numero"+RESET, intentos)
+ 
             
-
   input("\nPresione Enter para continuar: ")
   print("Cargando...")
   time.sleep(1)   #Recordar que las funciones deben estar Dentro del While, osea 1 Tab a la derecha
-  print(GREEN+"Este es tu intento numero"+RESET, intentos)
+  print(GREEN+"\nEste es tu intento numero"+RESET, intentos)
   print(CYAN+"Empezaras con un puntaje aleatorio de"+RESET, puntaje, CYAN+"puntos, ¿podras conseguir 1000 puntos?"+RESET)
   input("\nPresione Enter para continuar: ")
   print("Cargando...")
