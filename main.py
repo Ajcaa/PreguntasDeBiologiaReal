@@ -1,5 +1,8 @@
 #Constantes de los colores, las constantes son como las variables pero no se pueden modificar despues, son fijos. Siempre en mayusculas
 
+from Alternativas import pregunta1, pregunta2, pregunta3, pregunta4, pregunta5
+
+
 GREEN = '\033[32m'
 YELLOW = '\033[33m'
 BLUE = '\033[34m'
@@ -7,12 +10,16 @@ MAGENTA = '\033[35m'
 CYAN = '\033[36m'
 WHITE = '\033[37m'
 RED = '\033[31m'
+BIBlack= '\033[90m'
+BGMAGENTA= '\033[45m'
 RESET = '\033[39m'
+
 
 
 import time #
 
 import random # Importamos la librería random
+
 
 
 iniciar_trivia = True 
@@ -52,38 +59,47 @@ while iniciar_trivia == True:
 
 
   
-  #La pregunta 1 nos daras puntos al azar
+  #----------------La pregunta 1 nos daras puntos al azar--------------
+
   print(BLUE+"\n1.Las glándulas de Brunner, que se hallan en el duodeno, permiten:"+RESET)
-  print(YELLOW+"a)Realizar la digestión de las grasas.")
-  print("b)Permitir la activación de las diferentes enzimas.")
-  print("c)Estimular el peristaltismo intestinal.")
-  print("d)Neutralizar la acidez del contenido gástrico.")
-  print("e)Ser una sustancia que inhibe a las bacterias."+RESET)
+  for i in range (len(pregunta1)):
+    alter = pregunta1[i]
+    print(YELLOW+ alter +RESET)
 
   respuesta_1 = input("Tu respuesta: ").lower()
   
   while respuesta_1 not in ("a","b","c","d","e","x"):
-   respuesta_1 = input(RED+"Esa clave no existe, por favor ingrese alguna nuevamente: "+RESET).lower()
+   respuesta_1 = input(BIBlack+"Esa clave no existe, por favor ingrese alguna nuevamente: "+RESET).lower()
   
   if respuesta_1 == "a":
      puntaje -= random.randint(10, 30)
-     print(MAGENTA+"Incorrecto! \nLa digestion de las grasas lo hace la Bilis.\nPerdistes puntos extra al azar"+RESET)
+     print(RED+"Incorrecto! \nLa digestion de las grasas lo hace la Bilis."+RESET)
+     print(MAGENTA+"Perdistes puntos extra al azar"+RESET)
+    
   elif respuesta_1 == "b":
     puntaje -= random.randint(10, 30)
-    print(MAGENTA+"Incorrecto! \nEl HCI del estomago llega a activar una enzima inactiva, el Pepsinogeno.\nPerdistes puntos al azar"+RESET)
+    print(RED+"Incorrecto! \nEl HCI del estomago llega a activar una enzima inactiva, el Pepsinogeno."+RESET)
+    print(MAGENTA+"Perdistes puntos al azar"+RESET)
+    
   elif respuesta_1 == "c":
     puntaje -= random.randint(10, 30)
-    print(MAGENTA+"Incorrecto! \nEl peristaltismo intestinal transforma el Quimo a Quilo en el intestino delgado,alli termina la Digestion de Alimentos.\nPerdistes puntos al azar"+RESET)
+    print(RED+"Incorrecto! \nEl peristaltismo intestinal transforma el Quimo a Quilo en el intestino delgado,alli termina la Digestion de Alimentos."+RESET)
+    print(MAGENTA+"Perdistes puntos al azar"+RESET)
+    
   elif respuesta_1 == "e":
     puntaje -= random.randint(10, 30)
-    print(MAGENTA+"Incorrecto! \nInhibir bacterias, por ejemplo, es la funcion de las Placas de Peyer en el Intestino Delgado.\nPerdistes  puntos al azar"+RESET)
+    print(RED+"Incorrecto! \nInhibir bacterias, por ejemplo, es la funcion de las Placas de Peyer en el Intestino Delgado."+RESET)
+    print(MAGENTA+"Perdistes  puntos al azar"+RESET)
+    
   elif respuesta_1 == "x":
     puntaje += 100
-    print(GREEN+"Wow, distes a una letra secreta. \nDe recompensa tome 100 puntos"+RESET)
+    print(GREEN+"Wow, distes a una letra secreta.") 
+    print(MAGENTA+"De recompensa tome 100 puntos"+RESET)
     
   else:
    puntaje += random.randint(20, 50) #ganaras puntos al azar en ese rango
-   print(GREEN+"Muy bien!!", nombre, "\nLas glandulas de Brunner se encuentran en la Mucosa Duodenal (Intestino delgado).\nHas ganado puntos extra al azar"+RESET)
+   print(GREEN+"Muy bien!!", nombre, "\nLas glandulas de Brunner se encuentran en la Mucosa Duodenal (Intestino delgado)"+RESET)
+   print(MAGENTA+"Has ganado puntos extra al azar"+RESET)
     
   print("Tu puntaje ahora:",puntaje,"puntos")
   
@@ -93,38 +109,48 @@ while iniciar_trivia == True:
   time.sleep(1)
 
 
-#La pregunta 2 nos dara Puntos exactos
-  print(BLUE+"\n2.Respecto a las glándulas gástricas, en cual de ellas se elabora la hormona gastrina:"+RESET)
   
-  print(YELLOW+"a)Glándulas del cardias.")
-  print("b)Glándulas del fondo y cuerpo.")
-  print("c)Glándulas fúndicas.")
-  print("d)Glándulas pilóricas.")
-  print("e)Glándulas de Brúnner"+RESET)
+
+#-----------------La pregunta 2 nos dara Puntos exactos--------------------
+  print(BLUE+"\n2.Respecto a las glándulas gástricas, en cual de ellas se elabora la hormona gastrina:"+RESET)
+  for i in range (len(pregunta2)): #La longitud (len) es 5, el range tomara los indices 0,1,2,3,4
+    alter = pregunta2[i]
+    print(YELLOW+ alter +RESET)
+
   
   respuesta_2 = input("Tu respuesta: ").lower()
   
   while respuesta_2 not in ("a","b","c","d","e","x"):
-   respuesta_2 = input(RED+"Esa clave no existe, por favor ingrese alguna nuevamente: "+RESET).lower()
+   respuesta_2 = input(BIBlack+"Esa clave no existe, por favor ingrese alguna nuevamente: "+RESET).lower()
   
   if respuesta_2 == "a":
     puntaje -= 10
-    print(MAGENTA+"Incorrecto! \nLas Glandulas cardias secretan Mucus en el Estomago.\nPerdistes 10 puntos"+RESET)
+    print(RED+"Incorrecto! \nLas Glandulas cardias secretan Mucus en el Estomago."+RESET)
+    print(MAGENTA+"Perdistes 10 puntos"+RESET)
+    
   elif respuesta_2 == "b":
     puntaje -= 10
-    print(MAGENTA+"Incorrecto! \nLas Glandulas del fondo y cuerpo (del estomago) vienen a ser las glandulas fundicas. \nPerdistes 10 puntos"+RESET)
+    print(RED+"Incorrecto! \nLas Glandulas del fondo y cuerpo (del estomago) vienen a ser las glandulas fundicas."+RESET) 
+    print(MAGENTA+"Perdistes 10 puntos"+RESET)
+    
   elif respuesta_2 == "c":
     puntaje -= 10
-    print(MAGENTA+"Incorrecto! \nLas glandulas fundicas tienen diversas celulas,las celulas principales secretan Pepsinogeno y Lipasa gastrica. \nPerdistes 10 puntos"+RESET)
+    print(RED+"Incorrecto! \nLas glandulas fundicas tienen diversas celulas,las celulas principales secretan Pepsinogeno y Lipasa gastrica."+RESET) 
+    print(MAGENTA+"Perdistes 10 puntos"+RESET)
+    
   elif respuesta_2 == "e":
     puntaje -= 10
-    print(MAGENTA+"Incorrecto! \nLas Glandulas de Brunner estan en el Intestino Delgado. \nPerdistes 10 puntos"+RESET)
+    print(RED+"Incorrecto! \nLas Glandulas de Brunner estan en el Intestino Delgado."+RESET) 
+    print(MAGENTA+"Perdistes 10 puntos"+RESET)
+    
   elif respuesta_2 == "x":
     puntaje += 100
-    print(GREEN+"Solo por presionar x, has ganado 100 puntos extra"+RESET)
+    print(GREEN+"Solo por presionar x has conseguido puntos extra."+RESET) 
+    print(MAGENTA+"Has ganado 100 puntos"+RESET)
   else:
     puntaje += 20
-    print(GREEN+"Muy bien", nombre,"\nEstas estimulan el HCI del estomago y genera el Peristaltismo. \nHas ganado 20 puntos"+RESET)
+    print(GREEN+"Muy bien", nombre,"\nEstas estimulan el HCI del estomago y genera el Peristaltismo.") 
+    print(MAGENTA+"Has ganado 20 puntos"+RESET)
   
   print("Tu puntaje ahora:",puntaje,"puntos")  
   
@@ -132,45 +158,49 @@ while iniciar_trivia == True:
   print("Cargando...")
   time.sleep(1)
 
+
+
   
-  #Pregunta 3 usara signos aritmeticos para dar o quitarnos puntos de acuerdo a la respuesta
+  #--------------------Pregunta 3 usara signos aritmeticos para dar o quitarnos puntos de acuerdo a la respuesta-------------------
   print(BLUE+"\n3.Es un tipo de célula que se encuentra dentro de las glándulas gástricas; excepto:"+RESET)
-  print(YELLOW+"a)Mucosas")
-  print("b)Oxínticas o parietales")
-  print("c)Paneth")
-  print("d)Principales") 
-  print("e)Argentafines"+RESET)#Siempre el print dejando un espacio aqui
+  for i in range (len(pregunta3)):
+    alter = pregunta3[i]
+    print(YELLOW+ alter +RESET)
   
   respuesta_3 = input("Tu respuesta: ").lower()
   
   while respuesta_3 not in ("a", "b", "c", "d", "e", "x"):
-    respuesta_3 = input(RED+"Esa clave no existe, por favor ingrese alguna nuevamente: "+RESET).lower()
+    respuesta_3 = input(BIBlack+"Esa clave no existe, por favor ingrese alguna nuevamente: "+RESET).lower()
   
   if respuesta_3 == "a":
-    print(MAGENTA+"Incorrecto!!", nombre,"\nLas celulas mucosas son tambien llamadas celulas mucigenas.Estan en las Glandulas Fundicas.\nPierdes 5 puntos"+RESET)
+    print(RED+"Incorrecto!!", nombre,"\nLas celulas mucosas son tambien llamadas celulas mucigenas.Estan en las Glandulas Fundicas."+RESET)
+    print(MAGENTA+"Pierdes 5 puntos"+RESET)
     puntaje = puntaje - 5 #recuerda solo usar un = no dos
     
   elif respuesta_3 == "b":
-    print(MAGENTA+"Incorrecto!! \nLas celulas parietales de las Glandulas Fundicas secretan HCI y el Factor intrinseco.\nPierdes 2 puntos"+RESET)
+    print(RED+"Incorrecto!! \nLas celulas parietales de las Glandulas Fundicas secretan HCI y el Factor intrinseco."+RESET)
+    print(MAGENTA+"Pierdes 2 puntos"+RESET)
     puntaje = puntaje - 2
   
   elif respuesta_3 == "c": #una forma diferente de colocar la respuesta correcta en lugar de usar ELSE
-    print(GREEN+"Muy bien!! \nSon Celulas Intestinales que se encuentran en las Glándulas de Lieberkuhn.\nTu puntaje se multiplicara por Dos como recompensa", nombre+RESET)
+    print(GREEN+"Muy bien!! \nSon Celulas Intestinales que se encuentran en las Glándulas de Lieberkuhn.")
+    print(MAGENTA+"Tu puntaje se multiplicara por Dos como recompensa"+RESET)
     puntaje = puntaje * 2
   
   elif respuesta_3 == "d":
-    print(MAGENTA+"Muy mal!! \nLas células principales, parte de las Glandulas Fundicas, secretan Pepsinogeno y Lipasa Gastrica.\nPierdes 15 puntos."+RESET)
+    print(RED+"Muy mal!! \nLas células principales, parte de las Glandulas Fundicas, secretan Pepsinogeno y Lipasa Gastrica."+RESET)
+    print(MAGENTA+"Pierdes 15 puntos."+RESET)
     puntaje = puntaje - 15
   
   elif respuesta_3 == "e":
-    print(MAGENTA+"Pesimo!! \nLas celulas Argentafines estan presentes en el tracto gastrointestinal, secretan Serotonina.\nTu puntaje se reduce en la mitad (Se redondeara el numero si es necesario)."+RESET)
+    print(RED+"Pesimo!! \nLas celulas Argentafines estan presentes en el tracto gastrointestinal, secretan Serotonina."+RESET)
+    print(MAGENTA+"Tu puntaje se reduce en la mitad (Se redondeara el numero si es necesario)."+RESET)
     puntaje = puntaje // 2
 
   elif respuesta_3 == "x":
     puntaje += random.randint(10, 100)
-    print(GREEN+"Clave Secreta.\nPuntos al azar para usted"+RESET)
-  
-  
+    print(GREEN+"Clave Secreta."+RESET)
+    print(MAGENTA+"Puntos al azar para usted"+RESET)
   
   
   print("Tu puntaje ahora:", puntaje, "puntos")
@@ -180,37 +210,49 @@ while iniciar_trivia == True:
   time.sleep(1)
 
 
-  #La pregunta 4 nos daras puntos al azar
+
+  
+
+  #-----------La pregunta 4 nos daras puntos al azar------------
   print(BLUE+"\n4.Estructura respiratoria que no tiene cartílago "+RESET)
-  print(YELLOW+"a)Laringe")
-  print("b)Nariz")
-  print("c)Bronquiolos.")
-  print("d)Traquea")
-  print("e)Bronquios"+RESET)
+  for i in range (len(pregunta4)):
+    alter = pregunta4[i]
+    print(YELLOW+ alter +RESET)
 
   respuesta_4 = input("Tu respuesta: ").lower()
   
   while respuesta_4 not in ("a","b","c","d","e", "x"):
-   respuesta_4 = input(RED+"Esa clave no existe, por favor ingrese alguna nuevamente: "+RESET).lower()
+   respuesta_4 = input(BIBlack+"Esa clave no existe, por favor ingrese alguna nuevamente: "+RESET).lower()
   
   if respuesta_4 == "a":
      puntaje -= random.randint(40, 70)
-     print(MAGENTA+"Incorrecto! \nLa Laringe esta constituida por cartilagos impares (epiglotis, tiroides, cricoides) y cartilagos pares (aritenoides, corniculados, cuneiformes.\nPerdistes puntos al azar"+RESET)
+     print(RED+"Incorrecto! \nLa Laringe esta constituida por cartilagos impares (epiglotis, tiroides, cricoides) y cartilagos pares (aritenoides, corniculados, cuneiformes."+RESET)
+     print(MAGENTA+"Perdistes puntos al azar"+RESET)
+    
   elif respuesta_4 == "b":
     puntaje -= random.randint(10, 30)
-    print(MAGENTA+"Incorrecto! \nLa nariz tiene cartílago en su parte delantera.\nPerdistes puntos al azar"+RESET)
+    print(RED+"Incorrecto! \nLa nariz tiene cartílago en su parte delantera."+RESET)
+    print(MAGENTA+"Perdistes puntos al azar"+RESET)
+    
   elif respuesta_4 == "d":
     puntaje -= random.randint(10, 30)
-    print(MAGENTA+"Incorrecto! \nEn la Tráquea encontramos al cartílago hialino.\nPerdistes puntos al azar"+RESET)
+    print(RED+"Incorrecto! \nEn la Tráquea encontramos al cartílago hialino."+RESET)
+    print(MAGENTA+"Perdistes puntos al azar"+RESET)
+    
   elif respuesta_4 == "e":
     puntaje -= random.randint(10, 30)
-    print(MAGENTA+"Incorrecto! \nEn los bronquios encontramos el cartílago hialino.\nPerdistes puntos al azar"+RESET)
+    print(RED+"Incorrecto! \nEn los bronquios encontramos el cartílago hialino."+RESET)
+    print(MAGENTA+"Perdistes puntos al azar"+RESET)
+    
   elif respuesta_4 == "x":
     puntaje += 200
-    print(GREEN+"Presionastes una tecla secreta. \nDe recompensa tome 200 puntos"+RESET)
+    print(GREEN+"Presionastes una tecla secreta."+RESET)
+    print(MAGENTA+"De recompensa tome 200 puntos"+RESET)
+    
   else:
     puntaje += random.randint(50, 70) #ganaras puntos al azar en ese rango
-    print(GREEN+"Muy bien!!", nombre, "\nLos bronquiolos no tienen cartilago.\nHas ganado puntos al azar"+RESET)
+    print(GREEN+"Muy bien!!", nombre, "\nLos bronquiolos no tienen cartilago."+RESET)
+    print(MAGENTA+"Has ganado puntos al azar"+RESET)
     
   print("Tu puntaje ahora:",puntaje,"puntos")
   
@@ -220,41 +262,48 @@ while iniciar_trivia == True:
   time.sleep(1)
 
 
-  #Pregunta 5 usara multiplicacion y restas para dar o quitarnos puntos de acuerdo a la respuesta
+
+  
+
+  #---------------------Pregunta 5 usara multiplicacion y restas para dar o quitarnos puntos de acuerdo a la respuesta--------------------------
   print(BLUE+"\n5.Son conformantes del pedículo pulmonar; excepto:"+RESET)
-  print(YELLOW+"a)Vena pulmonar")
-  print("b)Bronquios principales")
-  print("c)Arteria pulmonar")
-  print("d)Sacos alveolares") 
-  print("e)Arteria bronquial"+RESET)#Siempre el print dejando un espacio aqui
+  for i in range (len(pregunta5)):
+    alter = pregunta5[i]
+    print(YELLOW+ alter +RESET)
   
   respuesta_5 = input("Tu respuesta: ").lower()
   while respuesta_5 not in ("a", "b", "c", "d", "e", "x"):
-    respuesta_5 = input(RED+"Esa clave no existe, por favor ingrese alguna nuevamente: "+RESET).lower()
+    respuesta_5 = input(BIBlack+"Esa clave no existe, por favor ingrese alguna nuevamente: "+RESET).lower()
   
   if respuesta_5 == "a":
-    print(MAGENTA+"Incorrecto!!\nLa vena pulmonar lleva sangre con oxígeno de los pulmones al corazón.\nPierdes 50 puntos"+RESET)
+    print(RED+"Incorrecto!!\nLa vena pulmonar lleva sangre con oxígeno de los pulmones al corazón."+RESET)
+    print(MAGENTA+"Pierdes 50 puntos"+RESET)
     puntaje = puntaje - 50 #recuerda solo usar un = no dos
     
   elif respuesta_5 == "b":
-    print(MAGENTA+"Incorrecto!!\nLos bronquios principales se dirigen desde el final de la tráquea hasta los hilios pulmonares por donde penetran en los pulmones.\nPierdes 25 puntos"+RESET)
+    print(RED+"Incorrecto!!\nLos bronquios principales se dirigen desde el final de la tráquea hasta los hilios pulmonares por donde penetran en los pulmones."+RESET)
+    print(MAGENTA+"Pierdes 25 puntos"+RESET)
     puntaje = puntaje - 25
   
   elif respuesta_5 == "c": #una forma diferente de colocar la respuesta correcta en lugar de usar ELSE
-    print(MAGENTA+"Muy mal!! \nLa arteria pulmonar transporta la sangre del ventrículo derecho del corazon a los pulmones.\nPierdes 75 puntos"+RESET)
+    print(RED+"Muy mal!! \nLa arteria pulmonar transporta la sangre del ventrículo derecho del corazon a los pulmones."+RESET)
+    print(MAGENTA+"Pierdes 75 puntos"+RESET)
     puntaje = puntaje - 75
   
   elif respuesta_5 == "e":
-    print(MAGENTA+"Muy mal!! \nLa arteria bronquial llevan sangre oxigenada a los pulmones.\nPierdes 15 puntos"+RESET)
+    print(RED+"Muy mal!! \nLa arteria bronquial llevan sangre oxigenada a los pulmones."+RESET)
+    print(MAGENTA+"Pierdes 15 puntos"+RESET)
     puntaje = puntaje - 15
   
   elif respuesta_5 == "d":
-    print(GREEN+"Muy bien!! \nAdemas, los sacos alveolares poseen numerosos alvéolos donde se realiza el intercambio de oxigeno\nSe te duplicara tu puntaje."+RESET)
+    print(GREEN+"Muy bien!! \nAdemas, los sacos alveolares poseen numerosos alvéolos donde se realiza el intercambio de oxigeno."+RESET)
+    print(MAGENTA+"Se te duplicara tu puntaje."+RESET)
     puntaje = puntaje * 2
 
   elif respuesta_5 == "x":
     puntaje += random.randint(25, 75)
-    print(GREEN+"Pulsastes una tecla con opción secreta.\nRecibiras puntos al azar."+RESET)
+    print(GREEN+"Pulsastes una tecla con opción secreta."+RESET)
+    print(MAGENTA+"Recibiras puntos al azar."+RESET)
   
   #fin de las preguntas, ahora ejercicios
   

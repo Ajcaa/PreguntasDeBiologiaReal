@@ -1,11 +1,43 @@
 {
   "files": {
+    "Alternativas.py": [
+      {
+        "id": "d88de043-c6e4-4e23-a3ba-feec91a8a619",
+        "line": 25,
+        "version": 239,
+        "index": 536
+      }
+    ],
     "main.py": [
       {
-        "id": "4ab26a62-a052-45a2-b656-5cfe58e4cd83",
-        "line": 42,
-        "version": 24067,
-        "index": 888
+        "id": "9993aa78-1124-4ae9-acc5-6f2bd9802582",
+        "line": 13,
+        "version": 25889,
+        "index": 350
+      },
+      {
+        "id": "96f1788b-84b3-404f-97c0-949e976c870f",
+        "line": 65,
+        "version": 25889,
+        "index": 1632
+      },
+      {
+        "id": "f0aae1bd-69db-4d65-ab9d-ce9fb33d0eda",
+        "line": 128,
+        "version": 25889,
+        "index": 4119
+      },
+      {
+        "id": "ca319801-2248-41ac-aa21-b61c1a02a17a",
+        "line": 177,
+        "version": 25889,
+        "index": 6125
+      },
+      {
+        "id": "a371ba65-25bf-40a6-9d60-e92dc0db3569",
+        "line": 229,
+        "version": 25889,
+        "index": 8202
       }
     ]
   }
