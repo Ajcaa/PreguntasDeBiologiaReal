@@ -11,7 +11,6 @@ CYAN = '\033[36m'
 WHITE = '\033[37m'
 RED = '\033[31m'
 BIBlack= '\033[90m'
-BGMAGENTA= '\033[45m'
 RESET = '\033[39m'
 
 
@@ -74,12 +73,12 @@ while iniciar_trivia == True:
   if respuesta_1 == "a":
      puntaje -= random.randint(10, 30)
      print(RED+"Incorrecto! \nLa digestion de las grasas lo hace la Bilis."+RESET)
-     print(MAGENTA+"Perdistes puntos extra al azar"+RESET)
+     print(MAGENTA+"Perdiste puntos extra al azar"+RESET)
     
   elif respuesta_1 == "b":
     puntaje -= random.randint(10, 30)
     print(RED+"Incorrecto! \nEl HCI del estomago llega a activar una enzima inactiva, el Pepsinogeno."+RESET)
-    print(MAGENTA+"Perdistes puntos al azar"+RESET)
+    print(MAGENTA+"Perdiste puntos al azar"+RESET)
     
   elif respuesta_1 == "c":
     puntaje -= random.randint(10, 30)
@@ -89,11 +88,11 @@ while iniciar_trivia == True:
   elif respuesta_1 == "e":
     puntaje -= random.randint(10, 30)
     print(RED+"Incorrecto! \nInhibir bacterias, por ejemplo, es la funcion de las Placas de Peyer en el Intestino Delgado."+RESET)
-    print(MAGENTA+"Perdistes  puntos al azar"+RESET)
+    print(MAGENTA+"Perdiste puntos al azar"+RESET)
     
   elif respuesta_1 == "x":
     puntaje += 100
-    print(GREEN+"Wow, distes a una letra secreta.") 
+    print(GREEN+"Wow, diste a una letra secreta.") 
     print(MAGENTA+"De recompensa tome 100 puntos"+RESET)
     
   else:
@@ -141,7 +140,7 @@ while iniciar_trivia == True:
   elif respuesta_2 == "e":
     puntaje -= 10
     print(RED+"Incorrecto! \nLas Glandulas de Brunner estan en el Intestino Delgado."+RESET) 
-    print(MAGENTA+"Perdistes 10 puntos"+RESET)
+    print(MAGENTA+"Perdiste 10 puntos"+RESET)
     
   elif respuesta_2 == "x":
     puntaje += 100
@@ -227,26 +226,26 @@ while iniciar_trivia == True:
   if respuesta_4 == "a":
      puntaje -= random.randint(40, 70)
      print(RED+"Incorrecto! \nLa Laringe esta constituida por cartilagos impares (epiglotis, tiroides, cricoides) y cartilagos pares (aritenoides, corniculados, cuneiformes."+RESET)
-     print(MAGENTA+"Perdistes puntos al azar"+RESET)
+     print(MAGENTA+"Perdiste puntos al azar"+RESET)
     
   elif respuesta_4 == "b":
     puntaje -= random.randint(10, 30)
     print(RED+"Incorrecto! \nLa nariz tiene cartílago en su parte delantera."+RESET)
-    print(MAGENTA+"Perdistes puntos al azar"+RESET)
+    print(MAGENTA+"Perdiste puntos al azar"+RESET)
     
   elif respuesta_4 == "d":
     puntaje -= random.randint(10, 30)
     print(RED+"Incorrecto! \nEn la Tráquea encontramos al cartílago hialino."+RESET)
-    print(MAGENTA+"Perdistes puntos al azar"+RESET)
+    print(MAGENTA+"Perdiste puntos al azar"+RESET)
     
   elif respuesta_4 == "e":
     puntaje -= random.randint(10, 30)
     print(RED+"Incorrecto! \nEn los bronquios encontramos el cartílago hialino."+RESET)
-    print(MAGENTA+"Perdistes puntos al azar"+RESET)
+    print(MAGENTA+"Perdiste puntos al azar"+RESET)
     
   elif respuesta_4 == "x":
     puntaje += 200
-    print(GREEN+"Presionastes una tecla secreta."+RESET)
+    print(GREEN+"Presionaste una tecla secreta."+RESET)
     print(MAGENTA+"De recompensa tome 200 puntos"+RESET)
     
   else:
@@ -302,7 +301,7 @@ while iniciar_trivia == True:
 
   elif respuesta_5 == "x":
     puntaje += random.randint(25, 75)
-    print(GREEN+"Pulsastes una tecla con opción secreta."+RESET)
+    print(GREEN+"Pulsaste una tecla con opción secreta."+RESET)
     print(MAGENTA+"Recibiras puntos al azar."+RESET)
   
   #fin de las preguntas, ahora ejercicios
